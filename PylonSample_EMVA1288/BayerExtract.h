@@ -53,12 +53,6 @@ inline bool BayerExtract::Extract(Pylon::CPylonImage& image, Pylon::CPylonImage&
 			return false;
 		}
 
-		if (pixelType != Pylon::EPixelType::PixelType_BayerRG8)
-		{
-			errorMessage = "ERROR: Only BayerRG8 is currently supported.";
-			return false;
-		}
-
 		uint32_t bitDepth = Pylon::BitDepth(pixelType);
 
 		if (bitDepth > 8 || bitDepth < 8)
