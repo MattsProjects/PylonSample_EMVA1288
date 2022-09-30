@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="BayerExtract.h" />
     <ClInclude Include="AnalysisTools.h" />
+    <ClInclude Include="StitchImage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
