@@ -167,7 +167,7 @@ int main(int argc, char* argv[])
 				throw RUNTIME_EXCEPTION("Basler Camera Light Not Found.", __FILE__, __LINE__);
 			}
 			camera.BslLightDeviceSelector.TrySetValue(BslLightDeviceSelector_Device1);
-			camera.BslLightDeviceBrightness.TrySetValue(1); // percent
+			camera.BslLightDeviceBrightness.TrySetValue(25); // percent
 			camera.BslLightDeviceSelector.TrySetValue(BslLightDeviceSelector_Device1);
 			camera.BslLightDeviceOperationMode.TrySetValue(BslLightDeviceOperationMode_On);
 		}
@@ -346,7 +346,7 @@ int main(int argc, char* argv[])
 
 					// stop if we've reached saturation
 					// if you want to see what happens to linearity & snr at saturation, change this to FindMin() or FindAvg()
-					if (AnalysisTools::FindMax(image1) == saturationValue && AnalysisTools::FindMax(image2) == saturationValue)
+					if (AnalysisTools::FindMin(image1) == saturationValue && AnalysisTools::FindMin(image2) == saturationValue)
 					{
 						camera.StopGrabbing();
 						cout << endl << "Saturation Reached. Stopping Test..." << endl;
